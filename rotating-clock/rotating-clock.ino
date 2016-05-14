@@ -1,6 +1,15 @@
-#include <SPI.h>
-#include "Arduboy.h"
-#include <EEPROM.h>
+/*
+ DEMO: rotating clock
+
+ TEAM a.r.g.: http://www.team-arg.com/demos.html
+
+ 2015 - JO3RI
+
+ Demo License: MIT : https://opensource.org/licenses/MIT
+
+ */
+
+#include "Arglib.h"
 #include "bitmaps.h"
 Arduboy arduboy;
 
@@ -19,7 +28,7 @@ void setup() {
 	arduboy.start();
 	arduboy.clearDisplay();
 	arduboy.display();
-	arduboy.drawBitmap(14, 16, TEAMarg, 96, 32, 1);
+	arduboy.drawBitmap(0, 8, TEAMarg, 128, 48, WHITE);
 	arduboy.display();
 	delay(3000);
 }
