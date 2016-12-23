@@ -9,9 +9,11 @@
 
 */
 
-#include "Arglib.h"
+#include <Arduino.h>
+#include <Arduboy2.h>
 #include "bitmaps.h"
-Arduboy arduboy;
+
+Arduboy2Base arduboy;
 
 float a = 0;
 float b = 0;
@@ -25,16 +27,16 @@ unsigned long lastHour = 3600000;
 unsigned long hourInterval = 3600000;
 
 void setup() {
-  arduboy.start();
-  arduboy.clearDisplay();
+  arduboy.begin();
+  arduboy.clear();
   arduboy.display();
-  arduboy.drawBitmap(0, 8, TEAMarg, 128, 48, WHITE);
+  arduboy.drawBitmap(34, 4,  T_arg, 60, 56, WHITE);
   arduboy.display();
   delay(3000);
 }
 
 void loop() {
-  arduboy.clearDisplay();
+  arduboy.clear();
   for (byte i = 1; i <= 12; i++) {
     arduboy.drawLine(63 + (30 * sin(d))*sin(-0 + 3.12 + ((6.28 / 12))*i), 31 + 30 * sin(0 + 4.72 + ((6.28 / 12))*i), 63 + (27 * sin(d))*sin(-0 + 3.12 + ((6.28 / 12))*i), 31 + 27 * sin(0 + 4.72 + ((6.28 / 12))*i), 1);
   }
